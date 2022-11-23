@@ -1,5 +1,5 @@
 //
-//  StartMenuView.swift
+//  LoadingView.swift
 //  Palisade
 //
 //  Created by Mathew Xie on 11/9/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StartMenuView: View {
+struct LoadingView: View {
     var body: some View {
         VStack {
             Spacer()
@@ -19,6 +19,7 @@ struct StartMenuView: View {
                 .padding(.top)
             
             Spacer()
+                .frame(height: 50.0)
             Text("Palisade")
                 .font(.system(size: 50))
                 .bold()
@@ -36,8 +37,8 @@ struct StartMenuView: View {
     }
 }
 
-struct StartMenuView_Previews: PreviewProvider {
+struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        StartMenuView()
+        LoadingView()
     }
 }
