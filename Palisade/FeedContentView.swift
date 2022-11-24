@@ -1,20 +1,20 @@
 //
-//  MainMenuView.swift
+//  FeedContentView.swift
 //  Palisade
 //
-//  Created by Mathew Xie on 11/22/22.
+//  Created by Mathew Xie on 11/23/22.
 //
 
 import SwiftUI
 
-struct MainMenuView: View {
+struct FeedContentView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct MainMenuView_Previews: PreviewProvider {
+struct FeedContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView()
+        FeedContentView()
     }
 }

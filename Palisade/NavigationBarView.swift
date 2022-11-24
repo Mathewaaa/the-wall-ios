@@ -9,7 +9,18 @@ import SwiftUI
 
 struct NavigationBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            PostContentView()
+                .tabItem {
+                    Image(systemName: "plus.circle")
+                    Text("Post")
+                }
+            FeedContentView()
+                .tabItem {
+                    Image(systemName: "person.3.fill").foregroundColor(.blue)
+                    Text("Feed")
+                }
+        }
     }
 }
 

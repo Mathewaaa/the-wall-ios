@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoading = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if isLoading {
+                LoadingView()
+            }
+            else {
+                NavigationBarView()
+            }
+        }
+        .onAppear { startLoading() }
+    }
+    
+    func startLoading() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // 3 seconds of loading
+            isLoading = false
+        }
     }
 }
 

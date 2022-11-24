@@ -15,11 +15,11 @@ struct LoadingView: View {
                 .font(
                     .system(size: 180, weight: .thin)
                 )
-                .hoverEffect()
-                .padding(.top)
+                .hoverEffect()            .padding(.top)
             
             Spacer()
                 .frame(height: 50.0)
+            
             Text("Palisade")
                 .font(.system(size: 50))
                 .bold()
