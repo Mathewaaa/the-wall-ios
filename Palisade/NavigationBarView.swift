@@ -1,5 +1,5 @@
 //
-//  NavigationBarView.swift
+//  ContentView.swift
 //  Palisade
 //
 //  Created by Mathew Xie on 11/22/22.
@@ -7,25 +7,31 @@
 
 import SwiftUI
 
-struct NavigationBarView: View {
+struct ContentView: View {
+    @State private var isLoading = false
     var body: some View {
-        TabView {
-            PostContentView()
-                .tabItem {
-                    Image(systemName: "plus.circle")
-                    Text("Post")
-                }
-            FeedContentView()
-                .tabItem {
-                    Image(systemName: "person.3.fill").foregroundColor(.blue)
-                    Text("Feed")
-                }
+        ZStack {
+            if isLoading {
+                LoadingView()
+            }
+            else {
+                TopicsView()
+            }
+
+        }
+        .onAppear { startLoading() }
+    }
+    
+    func startLoading() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // 3 seconds of loading
+            isLoading = false
         }
     }
 }
 
-struct NavigationBarView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView()
+        ContentView()
     }
 }
